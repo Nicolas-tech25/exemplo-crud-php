@@ -20,14 +20,14 @@ $conexao = new PDO(
 // Habilitar a verificação e sinalização de erros (exceções)
 $conexao->setAttribute(
     PDO::ATTR_ERRMODE,
-    PDO::ATTR_ERRMODE_EXCEPITION
+    PDO::ERRMODE_EXCEPTION
 );
 
 
 
-} catch(Exeception $erro){
+} catch(Exception $erro){
 /*Exception é uma classe de dados voltado para tratamento de exceções (erros) */
-die("Deu ruim!!");
+die("Deu ruim!!".$erro->getMessage());
 }
 
 
